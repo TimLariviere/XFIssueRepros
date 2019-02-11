@@ -5,13 +5,11 @@
              x:Class="TableSectionTitleIssue.MainPage">
 
     <StackLayout>
-        <TableView Intent="Form">
-            <TableSection x:Name="Section" Title="0">
-                <TextCell x:Name="Cell" Text="0" />
-            </TableSection>
-        </TableView>
+        <Label Text="With issue" />
+        <TableView x:Name="TableViewWithIssue" Intent="Form" />
+        <Label Text="Good" />
+        <TableView x:Name="TableViewGood" Intent="Form" />
         <Button x:Name="Increment" Text="Increment" />
-        <Button x:Name="Decrement" Text="Decrement" />
     </StackLayout>
 
 </ContentPage>

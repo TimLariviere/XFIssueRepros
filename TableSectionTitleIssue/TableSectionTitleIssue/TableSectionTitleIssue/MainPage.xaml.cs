@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace TableSectionTitleIssue
@@ -10,26 +6,38 @@ namespace TableSectionTitleIssue
     public partial class MainPage : ContentPage
     {
         public int _count = 0;
+        private TableSection _sectionWithIssue;
+        private TableSection _sectionGood;
+        private TextCell _cellWithIssue;
+        private TextCell _cellGood;
 
         public MainPage()
         {
             InitializeComponent();
-            Increment.Clicked += Increment_Clicked;
-            Decrement.Clicked += Decrement_Clicked;
-        }
 
-        private void Decrement_Clicked(object sender, EventArgs e)
-        {
-            _count--;
-            Section.Title = _count.ToString();
-            Cell.Text = _count.ToString();
+            _sectionWithIssue = new TableSection("0");
+            _sectionGood = new TableSection("0");
+            _cellWithIssue = new TextCell { Text = "0" };
+            _cellGood = new TextCell { Text = "0" };
+
+            _sectionWithIssue.Add(_cellWithIssue);
+            TableViewWithIssue.Root.Add(_sectionWithIssue);
+
+            _sectionGood.Add(_cellGood);
+            TableViewGood.Root = new TableRoot { _sectionGood };
+
+            Increment.Clicked += Increment_Clicked;
         }
 
         private void Increment_Clicked(object sender, EventArgs e)
         {
             _count++;
-            Section.Title = _count.ToString();
-            Cell.Text = _count.ToString();
+
+            _sectionWithIssue.Title = _count.ToString();
+            _sectionGood.Title = _count.ToString();
+
+            _cellWithIssue.Text = _count.ToString();
+            _cellGood.Text = _count.ToString();
         }
     }
 }
