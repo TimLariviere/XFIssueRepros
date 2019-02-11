@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TableSectionTitleIssue"
+             x:Class="TableSectionTitleIssue.MainPage">
+
+    <StackLayout>
+        <TableView Intent="Form">
+            <TableSection x:Name="Section" Title="0">
+                <TextCell x:Name="Cell" Text="0" />
+            </TableSection>
+        </TableView>
+        <Button x:Name="Increment" Text="Increment" />
+        <Button x:Name="Decrement" Text="Decrement" />
+    </StackLayout>
+
+</ContentPage>
