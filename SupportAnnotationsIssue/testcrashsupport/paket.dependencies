@@ -1,0 +1,3 @@
+source https://api.nuget.org/v3/index.json
+framework: monoandroid90
+nuget Xamarin.Android.Support.Annotations 28.0.0.1
